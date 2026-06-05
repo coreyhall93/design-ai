@@ -351,10 +351,10 @@ If you want high-signal examples first, start with:
 ### More Brands & Platforms
 
 - [Autodesk](design-md/autodesk/DESIGN.md)
-- [Automattic](design-md/automattic/DESIGN.md) *(personal fork addition)*
+- [Automattic](design-md/personal/automattic/DESIGN.md) *(personal)*
 - [Bloomberg](design-md/bloomberg/DESIGN.md)
 - [Canva](design-md/canva/DESIGN.md)
-- [Jetpack](design-md/jetpack/DESIGN.md) *(personal fork addition)*
+- [Jetpack](design-md/personal/jetpack/DESIGN.md) *(personal)*
 - [Mozilla](design-md/mozilla/DESIGN.md)
 - [Pinterest](design-md/pinterest/DESIGN.md)
 - [Squarespace](design-md/squarespace/DESIGN.md)
@@ -362,9 +362,9 @@ If you want high-signal examples first, start with:
 - [Twilio](design-md/twilio/DESIGN.md)
 - [Unity](design-md/unity/DESIGN.md)
 - [Wix](design-md/wix/DESIGN.md)
-- [WooCommerce](design-md/woocommerce/DESIGN.md) *(personal fork addition)*
-- [WordPress.com](design-md/wordpress-com/DESIGN.md) *(personal fork addition)*
-- [WordPress.org](design-md/wordpress-org/DESIGN.md) *(personal fork addition)*
+- [WooCommerce](design-md/personal/woocommerce/DESIGN.md) *(personal)*
+- [WordPress.com](design-md/personal/wordpress-com/DESIGN.md) *(personal)*
+- [WordPress.org](design-md/personal/wordpress-org/DESIGN.md) *(personal)*
 
 ---
 
