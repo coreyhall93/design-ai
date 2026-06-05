@@ -29,7 +29,8 @@ We maintain a personal fork so we can:
 
 - The sync PR mechanism is the primary way updates arrive. Merge them on GitHub, then pull locally.
 - If you want to contribute improvements or new companies back, the preferred path is usually an issue or PR on the original upstream repo (see their `CONTRIBUTING.md` and the 9-section template).
-- For purely personal or internal brands, you can add new `design-md/my-company/` directories here and they will stay in your fork.
+- For purely personal or internal brands, you can add new `design-md/personal/my-company/` directories here and they will stay in your fork (see `RESEARCH-AUTOMATTIC-BRANDS.md` for the pattern used for the 2026 Automattic brands).
 - Preview HTML files (when present) are useful for visually sanity-checking the documented tokens.
+- Detailed research findings + polish roadmap for the Automattic brands personal additions live in `RESEARCH-AUTOMATTIC-BRANDS.md`.
 
 See also the root `README.md` (from upstream) for the full list of available design systems and how to use a DESIGN.md with agents.

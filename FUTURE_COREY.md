@@ -50,6 +50,7 @@ To force a fresh sync check (without waiting for the daily cron): GitHub → Act
 ## Deeper Docs
 
 - `AGENTS.md` — especially the section **"Managing the Fork & Upstream Syncs (First-timer / Agent Guide)"**. This contains the exact commands and workflows for making changes, pulling updates, adding custom design systems, and handling syncs. (Corey relies on AI agents and will not remember the details.)
+- `RESEARCH-AUTOMATTIC-BRANDS.md` — detailed findings, internal research sources (via context-a8c), limitations, and prioritized next steps/polish roadmap for the personal Automattic brand additions (automattic, wordpress-*, woocommerce, jetpack). Read this when you have time to come back.
 - `README.md` (upstream library overview and full company list)
 - `.github/workflows/upstream-sync.yml` (how the automation works)
 - Upstream original + contribution guide: https://github.com/Khalidabdi1/design-ai

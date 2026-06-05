@@ -37,6 +37,8 @@
 
 When an agent is asked to help with this project in a maintenance capacity ("add my custom design", "pull latest designs", "I made some changes, now sync it"), come to this section first.
 
+**For the 2026 Automattic brands research (automattic, wordpress-*, woocommerce, jetpack):** See the dedicated `RESEARCH-AUTOMATTIC-BRANDS.md` at the repo root. It contains full findings from context-a8c MCP research, sources (WPDS tokens, color-studio, P2s, Slack), limitations, and a prioritized polish/next-steps list. Reference it + this section when resuming that work.
+
 ### Core Mental Model (very important)
 
 - `coreyhall93/design-ai` (your fork on GitHub) is *your* controlled copy.
