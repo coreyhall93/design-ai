@@ -13,7 +13,7 @@ If you are looking for:
 
 this repo is built for exactly that workflow.
 
-![DESIGN.md Count](https://img.shields.io/badge/DESIGN.md%20count-209-10b981?style=classic)
+![DESIGN.md Count](https://img.shields.io/badge/DESIGN.md%20count-214-10b981?style=classic)
 [![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
@@ -351,8 +351,10 @@ If you want high-signal examples first, start with:
 ### More Brands & Platforms
 
 - [Autodesk](design-md/autodesk/DESIGN.md)
+- [Automattic](design-md/automattic/DESIGN.md) *(personal fork addition)*
 - [Bloomberg](design-md/bloomberg/DESIGN.md)
 - [Canva](design-md/canva/DESIGN.md)
+- [Jetpack](design-md/jetpack/DESIGN.md) *(personal fork addition)*
 - [Mozilla](design-md/mozilla/DESIGN.md)
 - [Pinterest](design-md/pinterest/DESIGN.md)
 - [Squarespace](design-md/squarespace/DESIGN.md)
@@ -360,6 +362,9 @@ If you want high-signal examples first, start with:
 - [Twilio](design-md/twilio/DESIGN.md)
 - [Unity](design-md/unity/DESIGN.md)
 - [Wix](design-md/wix/DESIGN.md)
+- [WooCommerce](design-md/woocommerce/DESIGN.md) *(personal fork addition)*
+- [WordPress.com](design-md/wordpress-com/DESIGN.md) *(personal fork addition)*
+- [WordPress.org](design-md/wordpress-org/DESIGN.md) *(personal fork addition)*
 
 ---
 
