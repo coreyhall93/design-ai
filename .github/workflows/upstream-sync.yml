@@ -1,0 +1,79 @@
+name: Sync with upstream
+
+on:
+  schedule:
+    # Run daily at 06:00 UTC. Change the cron if you prefer a different time/frequency.
+    - cron: '0 6 * * *'
+  workflow_dispatch:   # Allows manual "Run workflow" from the Actions tab
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git user
+        run: |
+          git config user.name "coreyhall93 (via GitHub Actions)"
+          git config user.email "coreyhall93@users.noreply.github.com"
+
+      - name: Add upstream remote and fetch
+        run: |
+          git remote add upstream https://github.com/Khalidabdi1/design-ai.git 2>/dev/null || true
+          git fetch upstream
+
+      - name: Create/reset sync branch from current main
+        run: |
+          git checkout -B chore/sync-upstream main
+
+      - name: Merge upstream/main (continues on conflicts)
+        id: merge
+        run: |
+          set +e
+          git merge upstream/main --no-edit --no-ff
+          merge_exit=$?
+          if [ $merge_exit -eq 0 ]; then
+            echo "merge_status=clean" >> $GITHUB_OUTPUT
+          else
+            echo "merge_status=conflicts" >> $GITHUB_OUTPUT
+            echo "Conflicts were detected during merge. They will appear in the PR for resolution."
+          fi
+          # Do not exit 1; we still want to open/update the PR so conflicts are visible
+
+      - name: Create or update Pull Request with changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: chore/sync-upstream
+          title: "chore: sync with upstream design-ai"
+          body: |
+            This is an automated sync PR from the upstream repository.
+
+            **Upstream:** https://github.com/Khalidabdi1/design-ai
+
+            It pulls in the latest:
+            - New or updated `DESIGN.md` files for additional companies
+            - README company index syncs
+            - Any other improvements
+
+            ### What to do
+            - Review the "Files changed" tab
+            - If clean, merge this PR to bring your fork up to date
+            - If there are conflicts (rare), resolve them here or locally then push
+            - You can also manually trigger a fresh sync any time from the **Actions** tab → "Sync with upstream" → "Run workflow"
+
+            The sync runs automatically once per day. The branch for this PR is recreated/updated on each run until merged.
+          commit-message: "chore: sync upstream changes from Khalidabdi1/design-ai"
+          delete-branch: true
+          labels: |
+            automated
+            upstream-sync
+          draft: false
