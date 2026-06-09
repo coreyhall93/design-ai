@@ -56,9 +56,21 @@ jobs:
           echo "new_commits=$count" >> $GITHUB_OUTPUT
           echo "New commits from upstream: $count"
 
+      - name: Ensure the sync branch is actually different from main
+        id: branch-check
+        run: |
+          main_sha=$(git rev-parse main)
+          sync_sha=$(git rev-parse chore/sync-upstream)
+          if [ "$main_sha" = "$sync_sha" ]; then
+            echo "branches_same=true" >> $GITHUB_OUTPUT
+          else
+            echo "branches_same=false" >> $GITHUB_OUTPUT
+          fi
+          echo "main=$main_sha sync=$sync_sha"
+
       - name: Create or update Pull Request with changes
-        if: steps.upstream.outputs.new_commits != '0'
-        uses: peter-evans/create-pull-request@v6
+        if: steps.upstream.outputs.new_commits != '0' && steps.branch-check.outputs.branches_same != 'true'
+        uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: chore/sync-upstream
