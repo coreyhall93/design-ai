@@ -48,7 +48,16 @@ jobs:
           fi
           # Do not exit 1; we still want to open/update the PR so conflicts are visible
 
+      - name: Check for new commits from upstream
+        id: upstream
+        run: |
+          # How many commits are on upstream/main but not on our current HEAD?
+          count=$(git rev-list --count HEAD..upstream/main 2>/dev/null || echo 0)
+          echo "new_commits=$count" >> $GITHUB_OUTPUT
+          echo "New commits from upstream: $count"
+
       - name: Create or update Pull Request with changes
+        if: steps.upstream.outputs.new_commits != '0'
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
